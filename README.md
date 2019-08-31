@@ -32,7 +32,7 @@ curl --header "PRIVATE-TOKEN: NL1DJfCAJRs7oEAeduJL" https://gitlab.com/api/v4/gr
 
 Sample output:
 ```
-{{Color|red|don@donh:~/PycharmProjects$}} curl --header "PRIVATE-TOKEN: NL1DJfCAJRs7oEAeduJL" https://gitlab.com/api/v4/groups/5255791/members
+**don@donh:~/PycharmProjects$** curl --header "PRIVATE-TOKEN: NL1DJfCAJRs7oEAeduJL" https://gitlab.com/api/v4/groups/5255791/members
 [{"id":3620564,"name":"Don Harbin","username":"dbharbin","state":"active","avatar_url":"https://secure.gravatar.com/avatar/97cd4f46eb78f3c28f7955500e5ee10a?s=80\u0026d=identicon","web_url":"https://gitlab.com/dbharbin","access_level":50,"expires_at":null},{"id":4421968,"name":"Scott Bambrough","username":"sbambrough","state":"active","avatar_url":"https://secure.gravatar.com/avatar/9181a5db4d34d3081a5ef3a79ef36ba4?s=80\u0026d=identicon","web_url":"https://gitlab.com/sbambrough","access_level":40,"expires_at":"2019-11-06"}]don@donh:~/PycharmProjects$
 ```
 
