@@ -17,6 +17,7 @@ To use the python scripts or curl examples, here is what you need to have on han
 
 You find these like below:
 
+<img src=photos/GroupProjectUserIDLocations.gif width=40% height=50% />
 
 
 
