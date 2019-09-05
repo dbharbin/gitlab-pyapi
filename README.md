@@ -23,7 +23,7 @@ You find these like below:
 
 # curl examples
 This section provides some working examples using curl to interface to github.com in case a person may want a starting point to do  some shell scripting.
-Once working in curl, (this helpful site)[https://curl.trillworks.com] converts the curl commands to Python requests.
+Once working in curl, [this helpful site](https://curl.trillworks.com) converts the curl commands to Python requests.
 
 ## List Group Members
 ```
