@@ -22,8 +22,8 @@ You find these like below:
 
 
 # curl examples
-This section provides some working examples using curl to interface to github.com in case a person may want a starting point fto do  some shell scripting.
-
+This section provides some working examples using curl to interface to github.com in case a person may want a starting point to do  some shell scripting.
+Once working in curl, (this helpful site)[https://curl.trillworks.com] converts the curl commands to Python requests.
 
 ## List Group Members
 ```
@@ -301,6 +301,13 @@ curl --header "PRIVATE-TOKEN: replacetextwithyourtoken" https://gitlab.com/api/v
 ```
 curl --header "PRIVATE-TOKEN: replacetextwithyourtoken" https://gitlab.com/ap9705/notification_settings|python -m json.tool
 ```
+
+## Change Project visibility
+```
+curl -X PUT -d visibility="public" --header "PRIVATE-TOKEN: replacetextwithyourtoken" https://gitlab.com/api/v4/projects/13839583
+```
+
+
 
 
 
