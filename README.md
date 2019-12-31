@@ -21,7 +21,10 @@ You find these like below:
 <img src=photos/GroupProjectUserIDLocations.gif width=40% height=50% />
 
 # Code design
-The code is broken into three primary components. The EntryMenu.py is a primitive menu to use the tool. the featureLibrary.py contains all the scripts that interface to GitLab thru it's RESTful enterface. Finally, the remainder of the files are setup entry files to call into the featureLibrary.py from the EntryMenu.
+The code is broken into three primary components. 
+EntryMenu.py is a primitive menu to use the tool. 
+The featureLibrary.py contains all the scripts that interface to GitLab thru it's RESTful enterface. 
+Finally, the remainder of the files are separate setup and entry files to call into the featureLibrary.py for each desired function. 
 
 # curl examples
 This section provides some working examples using curl to interface to github.com in case a person may want a starting point to do  some shell scripting.
