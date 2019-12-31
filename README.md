@@ -1,6 +1,7 @@
-# Python Admin Scripts
+# Python GitLab Scripts
 
-This repo contains a number of python scripts designed to interface to gitlab.com back end directly. 
+This repo contains a series of python scripts designed to interface to gitlab 
+using the GitLab API. 
 
 ## What you will need
 To use the python scripts or curl examples, here is what you need to have on hand:
@@ -19,7 +20,8 @@ You find these like below:
 
 <img src=photos/GroupProjectUserIDLocations.gif width=40% height=50% />
 
-
+# Code design
+The code is broken into three primary components. The EntryMenu.py is a primitive menu to use the tool. the featureLibrary.py contains all the scripts that interface to GitLab thru it's RESTful enterface. Finally, the remainder of the files are setup entry files to call into the featureLibrary.py from the EntryMenu.
 
 # curl examples
 This section provides some working examples using curl to interface to github.com in case a person may want a starting point to do  some shell scripting.
