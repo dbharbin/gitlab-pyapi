@@ -24,7 +24,7 @@ You find these like below:
 The code is broken into three primary components. 
 EntryMenu.py is a primitive menu to use the tool. 
 The featureLibrary.py contains all the scripts that interface to GitLab thru it's RESTful enterface. 
-Finally, the remainder of the files are separate setup and entry files to call into the featureLibrary.py for each desired function. 
+Finally, the remainder of the files are separate setup and entry files to call into the featureLibrary.py for each desired function. These files are located in the ./Frontend subdirectory.
 
 # curl examples
 This section provides some working examples using curl to interface to github.com in case a person may want a starting point to do  some shell scripting.
@@ -291,6 +291,10 @@ don@donh:~/PycharmProjects$
 curl --header "PRIVATE-TOKEN: replacetextwithyourtoken" https://gitlab.com/api/v4/groups/5858938/members/all|python -m json.tool
 ```
 
+'''
+curl --header "PRIVATE-TOKEN: replacetextwithyourtoken" https://gitlab.com/api/v4/groups/6832150/members|python -m json.tool
+'''
+
 ## List all projects under a group
 ```
 curl --header "PRIVATE-TOKEN: replacetextwithyourtoken" https://gitlab.com/api/v4/groups/5255791/projects?include_subgroups=true|python -m json.tool
@@ -313,6 +317,14 @@ curl -X PUT -d visibility="public" --header "PRIVATE-TOKEN: replacetextwithyourt
 ```
 
 
+
+# Opens
+
+As these examples have been tested, the following gaps have been found that would be nice to resolve:
+
+### Adding users / Changing roles in inherited projects and groups
+It was noticed during testing that if a user in part of a project or groups through inheritance, that an error is returned when attempting to change a user role in the child projects/groups.
+I have yet to find a way thru the API to find what the top level (parent) group the user was added to. It's shown in the UI, but still investigating for API.
 
 
 
