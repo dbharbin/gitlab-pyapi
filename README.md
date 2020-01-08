@@ -3,6 +3,8 @@
 This repo contains a series of python scripts designed to interface to gitlab 
 using the GitLab API. 
 
+Testing was performed on Python version 3.7. PIP version was 19.3.1.
+
 ## What you will need
 To use the python scripts or curl examples, here is what you need to have on hand:
 - A Personal Access Token: You get that like so the below:
