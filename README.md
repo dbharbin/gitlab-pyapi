@@ -132,82 +132,6 @@ don@donh:~/PycharmProjects$ curl --header "PRIVATE-TOKEN: replacetextwithyourtok
         "external_authorization_classification_label": ""
     },
     {
-        "id": 13839705,
-        "description": "",
-        "name": "ProjectB",
-        "name_with_namespace": "c_linaro / AAA Private / ProjectB",
-        "path": "projectb",
-        "path_with_namespace": "codelinaro/qualcomm/projectb",
-        "created_at": "2019-08-16T04:57:26.929Z",
-        "default_branch": null,
-        "tag_list": [],
-        "ssh_url_to_repo": "git@gitlab.com:codelinaro/qualcomm/projectb.git",
-        "http_url_to_repo": "https://gitlab.com/codelinaro/qualcomm/projectb.git",
-        "web_url": "https://gitlab.com/codelinaro/qualcomm/projectb",
-        "readme_url": null,
-        "avatar_url": null,
-        "star_count": 0,
-        "forks_count": 0,
-        "last_activity_at": "2019-08-16T04:57:26.929Z",
-        "namespace": {
-            "id": 5858869,
-            "name": "AAA Private",
-            "path": "qualcomm",
-            "kind": "group",
-            "full_path": "codelinaro/qualcomm",
-            "parent_id": 5255791,
-            "avatar_url": null,
-            "web_url": "https://gitlab.com/groups/codelinaro/qualcomm"
-        },
-        "_links": {
-            "self": "https://gitlab.com/api/v4/projects/13839705",
-            "issues": "https://gitlab.com/api/v4/projects/13839705/issues",
-            "merge_requests": "https://gitlab.com/api/v4/projects/13839705/merge_requests",
-            "repo_branches": "https://gitlab.com/api/v4/projects/13839705/repository/branches",
-            "labels": "https://gitlab.com/api/v4/projects/13839705/labels",
-            "events": "https://gitlab.com/api/v4/projects/13839705/events",
-            "members": "https://gitlab.com/api/v4/projects/13839705/members"
-        },
-        "empty_repo": true,
-        "archived": false,
-        "visibility": "private",
-        "resolve_outdated_diff_discussions": false,
-        "container_registry_enabled": true,
-        "issues_enabled": true,
-        "merge_requests_enabled": true,
-        "wiki_enabled": true,
-        "jobs_enabled": true,
-        "snippets_enabled": true,
-        "issues_access_level": "enabled",
-        "repository_access_level": "enabled",
-        "merge_requests_access_level": "enabled",
-        "wiki_access_level": "enabled",
-        "builds_access_level": "enabled",
-        "snippets_access_level": "enabled",
-        "shared_runners_enabled": true,
-        "lfs_enabled": true,
-        "creator_id": 3620564,
-        "import_status": "none",
-        "open_issues_count": 0,
-        "ci_default_git_depth": 50,
-        "public_jobs": true,
-        "build_timeout": 3600,
-        "auto_cancel_pending_pipelines": "enabled",
-        "build_coverage_regex": null,
-        "ci_config_path": null,
-        "shared_with_groups": [],
-        "only_allow_merge_if_pipeline_succeeds": false,
-        "request_access_enabled": false,
-        "only_allow_merge_if_all_discussions_are_resolved": false,
-        "printing_merge_request_link_enabled": true,
-        "merge_method": "merge",
-        "auto_devops_enabled": false,
-        "auto_devops_deploy_strategy": "continuous",
-        "approvals_before_merge": 0,
-        "mirror": false,
-        "external_authorization_classification_label": ""
-    },
-    {
         "id": 13839583,
         "description": "",
         "name": "ProjectA",
@@ -318,6 +242,12 @@ curl --header "PRIVATE-TOKEN: replacetextwithyourtoken" https://gitlab.com/ap970
 curl -X PUT -d visibility="public" --header "PRIVATE-TOKEN: replacetextwithyourtoken" https://gitlab.com/api/v4/projects/13839583
 ```
 
+## Search
+The API provides a global search feature.  It can be used to search projects, groups, issues and other items.
+The example below is an example of a global search of public projects on the gitlab.com instance and any private projects the curl request initiator has access to for the string "Chattertest".
+'''
+curl --request GET --header 'PRIVATE-TOKEN: replacetextwithyourtoken' 'https://gitlab.com/api/v4/search?scope=projects&search=Chattertest'|python -m json.tool
+'''
 
 
 # Opens
