@@ -245,9 +245,9 @@ curl -X PUT -d visibility="public" --header "PRIVATE-TOKEN: replacetextwithyourt
 ## Search
 The API provides a global search feature.  It can be used to search projects, groups, issues and other items.
 The example below is an example of a global search of public projects on the gitlab.com instance and any private projects the curl request initiator has access to for the string "Chattertest".
-'''
+```
 curl --request GET --header 'PRIVATE-TOKEN: replacetextwithyourtoken' 'https://gitlab.com/api/v4/search?scope=projects&search=Chattertest'|python -m json.tool
-'''
+```
 
 
 # Opens
