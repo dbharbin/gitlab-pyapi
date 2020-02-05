@@ -40,7 +40,8 @@ def setProjectVisibility(myToken):
 
     project_ID = input("Type in your valid project_ID: ")
 
-    visibilityState = input("Enter desired visibility state (public, private, internal): ")
+    # force lower case since this is all GitLab API accepts.
+    visibilityState = input("Enter desired visibility state (public, private, internal): ").lower()
 
     #print("project_ID: ", project_ID)
     print("Visibility state: ", visibilityState)
@@ -58,9 +59,9 @@ def setProjectVisibility(myToken):
     print("     Project id: " + str(json_object['id']), end="\t")
     print(" Full path: " + json_object['path_with_namespace'])
 
-    temp = input("Change Visibility to " + visibilityState + " now? (y/n): ")
+    temp = input("Change Visibility to " + visibilityState + " now? (y/n): ").lower()
 
-    if temp == "y" or temp == "Y":
+    if temp == "y":
         response = featureLibrary.set_project_visibility(project_ID, visibilityState, myToken)
         if response.status_code == HTTP_STATUS_SUCCESS:
             print("Update passed")

@@ -37,13 +37,13 @@ def changeUserRole(myToken):
 
     pg_valid = False
     while pg_valid == False:
-        projectORgroup = input("Enter whether want to add to project or group (p/g): ")
-        if (projectORgroup == "p") or (projectORgroup == "P") or (projectORgroup == "g") or (projectORgroup == "G"):
+        projectORgroup = input("Enter whether want to add to project or group (p/g): ").lower()
+        if (projectORgroup == "p") or (projectORgroup == "g"):
             pg_valid = True
         else:
             print(" Entry error: Invalid entry, try again")
 
-    if (projectORgroup == "p") or (projectORgroup == "P"):
+    if (projectORgroup == "p"):
         project_ID = input("Enter valid Project_ID: ")
     else:
         group_ID = input("Enter valid Group_ID: ")
@@ -71,7 +71,7 @@ def changeUserRole(myToken):
         else:
             print(" Entry error: Invalid access level entered, try again")
 
-    if (projectORgroup == "p") or (projectORgroup == "P"):
+    if (projectORgroup == "p"):
         response = featureLibrary.change_user_project_role(User_ID, project_ID, accessLevel, myToken)
     else:
         response = featureLibrary.change_user_group_role(User_ID, group_ID, accessLevel, myToken)

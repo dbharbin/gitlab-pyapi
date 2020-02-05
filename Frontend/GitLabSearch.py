@@ -35,11 +35,11 @@ def globalSearch(myToken):
     action_valid = False
     while action_valid == False:
 
-        type = input("Search Projects or Users? (p/u): ")
-        if (type == "p") or (type == "P"):
+        type = input("Search Projects or Users? (p/u): ").lower()
+        if (type == "p"):
               action_valid = True
               search_type="projects"
-        elif (type == "u") or (type == "U"):
+        elif (type == "u"):
               action_valid = True
               search_type="users"
         else:

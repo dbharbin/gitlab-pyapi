@@ -58,9 +58,9 @@ def setGroupVisibility(myToken):
     print("     Group/Subgroup id: " + str(json_object['id']), end="\t")
     print(" Full path: " + json_object['full_path'])
 
-    temp = input("Change Visibility to " + visibilityState + " now? (y/n): ")
+    temp = input("Change Visibility to " + visibilityState + " now? (y/n): ").lower()
 
-    if temp == "y" or temp == "Y":
+    if temp == "y":
         response = featureLibrary.set_group_visibility(group_ID, visibilityState, myToken)
         if response.status_code == HTTP_STATUS_SUCCESS:
             print("Update passed")

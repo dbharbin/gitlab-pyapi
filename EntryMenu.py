@@ -84,36 +84,36 @@ S Search Projects/Users     U Update Access Token   X Exit
 
 while True:
     print(entry_Menu)
-    key = input("Press desired key.... ")
+    key = input("Press desired key.... ").lower()
 
-    if key == "a" or key == "A":
+    if key == "a":
         printGroupJSON(privateToken)
-    elif key == "b" or key == "B":
+    elif key == "b":
         printProjectJSON(privateToken)
-    elif key == "c" or key == "C":
+    elif key == "c":
         setGroupVisibility(privateToken)
-    elif key == "d" or key == "D":
+    elif key == "d":
         setProjectVisibility(privateToken)
-    elif key == "e" or key == "E":
+    elif key == "e":
         nestedGroupsPrint(privateToken)
-    elif key == "f" or key == "F":
+    elif key == "f":
         nestedGroupSetVisibility(privateToken)
-    elif key == "g" or key == "G":
+    elif key == "g":
         addOrRemoveMember(privateToken)
-    elif key == "h" or key == "H":
+    elif key == "h":
         changeUserRole(privateToken)
-    elif key == "i" or key == "I":
+    elif key == "i":
         getUsersInGroup(privateToken)
-    elif key == "j" or key == "J":
+    elif key == "j":
         getUsersInProject(privateToken)
-    elif key == "s" or key == "S":
+    elif key == "s":
         globalSearch(privateToken)
-    elif key == "u" or key == "U":
+    elif key == "u":
         print("Current Token Value: ", privateToken)
         print()
         privateToken = input("Enter new PRIVATE-TOKEN: ")
         print("Updated PRIVATE-TOKEN = ", privateToken)
-    elif key == "x" or key == "X":
+    elif key == "x":
         print("See ya later...", end="\t")
         time.sleep(1)
         break

@@ -38,28 +38,28 @@ def addOrRemoveMember(myToken):
 
     action_valid = False
     while action_valid == False:
-        action = input("Add or Remove User? (a/r): ")
-        if (action == "a") or (action == "A") or (action == "r") or (action == "R"):
+        action = input("Add or Remove User? (a/r): ").lower()
+        if (action == "a") or (action == "r"):
             action_valid = True
         else:
             print(" Entry error: Invalid entry, try again")
 
     pg_valid = False
     while pg_valid == False:
-        projectORgroup = input("Enter whether want to add to project or group (p/g): ")
-        if (projectORgroup == "p") or (projectORgroup == "P") or (projectORgroup == "g") or (projectORgroup == "G"):
+        projectORgroup = input("Enter whether want to add to project or group (p/g): ").lower()
+        if (projectORgroup == "p") or (projectORgroup == "g"):
             pg_valid = True
         else:
             print(" Entry error: Invalid entry, try again")
 
 
-    if action == "a" or action == "A":
+    if action == "a":
         access_level_text = """
         =================================================================
         Valid access levels when adding a Member:
         10 => Guest access
         20 => Reporter access 
-        30 => Developer access
+        30 => Developer acces
         40 => Maintainer access
         50 => Owner access # Only valid for groups
         =================================================================
@@ -74,7 +74,7 @@ def addOrRemoveMember(myToken):
             else:
                 print(" Entry error: Invalid access level entered, try again")
 
-        if (projectORgroup == "p") or (projectORgroup == "P"):
+        if (projectORgroup == "p"):
             project_ID = input("Enter valid Project_ID: ")
             response = featureLibrary.add_user_to_project(User_ID, project_ID, accessLevel, myToken)
         else:
@@ -82,8 +82,8 @@ def addOrRemoveMember(myToken):
             response = featureLibrary.add_user_to_group(User_ID, group_ID, accessLevel, myToken)
 
 
-    elif action == "r"  or action ==  "R":
-        if (projectORgroup == "p") or (projectORgroup == "P"):
+    elif action == "r":
+        if (projectORgroup == "p"):
             project_ID = input("Enter valid Project_ID: ")
             response = featureLibrary.remove_user_from_project(User_ID, project_ID, myToken)
         else:
