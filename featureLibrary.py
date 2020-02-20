@@ -25,6 +25,30 @@ import json
 # Set the following BASE_URL to point to the GitLab instance url root.
 BASE_URL = "https://gitlab.com/api/v4"
 
+def admin_create_users(token, first_name,last_name,username,email,org,group_creation):
+    print("\t\tEntry: admin_create_users()")
+
+    headers = {
+        'PRIVATE-TOKEN': token,
+    }
+
+    separator = ""
+    full_name_string = (separator.join(first_name) + " " + separator.join(last_name))
+    print("\t\tFull name: ", full_name_string)
+
+    params = {
+        'email': email,
+        'username': username,
+        'name': full_name_string,
+        'org': org,
+        'group_creation': group_creation,
+        'reset_password': 'true'
+    }
+
+    response = requests.post('https://git.poc.itmethods.com/api/v4/users', headers=headers, params=params)
+
+    return response
+
 def set_project_visibility(projectID, visibility, privateToken):
     '''
     Summary: This function will set the GitLab visibility for a project.  Three options - "public" "private" "internal".

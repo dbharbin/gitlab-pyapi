@@ -21,6 +21,7 @@ import json
 import csv
 import string
 import requests
+import os.path
 
 import featureLibrary
 
@@ -36,6 +37,9 @@ def adminCreateUsers(myToken):
     ==========================================================================================
     ==========================================================================================
     Create new accounts from a CSV file...
+    
+             NOTE: GitLab Access Token IS REQUIRED to be an admin token!!!
+    
     ADDITIONAL NOTES:  
     * Prior to going any further make sure to have the following available:
     * The input file must be formatted as follows:
@@ -51,8 +55,14 @@ def adminCreateUsers(myToken):
     
 # curl --request POST --header "PRIVATE-TOKEN: Z6ckcsSXeYU4xsDSexbE" "https://git.poc.itmethods.com/api/v4/users?email=arizidon@yahoo.com&password=abc123dorayme&username=testusername&name="Git Crackin"&reset_password=true"
 
-    #source_file = input("Enter the input file name with full path: ")
-    source_file = "../../create_users.txt"
+    source_file = input("Enter the input file name with full path: ")
+    #source_file = "../../create_users.txt"
+
+    if os.path.isfile(source_file):
+        print("\tFile exists, continue")
+    else:
+        print("\tFile does not exist, try again")
+        return
 
     with open(source_file) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -73,7 +83,5 @@ def adminCreateUsers(myToken):
                 line_count += 1
         print(f'Processed {line_count} lines.')
 
-token="Z6ckcsSXeYU4xsDSexbE"
-results=adminCreateUsers(token)
 
 

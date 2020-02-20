@@ -32,8 +32,7 @@ from Frontend.GetUsersInProject import getUsersInProject
 from Frontend.AddRemoveUser import addOrRemoveMember
 from Frontend.ChangeUserRole import changeUserRole
 from Frontend.GitLabSearch import globalSearch
-
-
+from Frontend.AdminCreateUsers import adminCreateUsers
 
 # from AddRemoveUser import print_hello
 
@@ -76,7 +75,7 @@ entry_Menu = """
 A Print Group JSON          B Print Project JSON    C Set Group Visibility
 D Set Project Visibility    E Print Nested Groups   F Set Nested Group Visibility
 G Add/Remove User           H Change User Role      I Get Users in a Group
-J Get Users in a Project    K TBD
+J Get Users in a Project    K Create User Accounts
 
 S Search Projects/Users     U Update Access Token   X Exit    
 ================================================================================= 
@@ -106,6 +105,8 @@ while True:
         getUsersInGroup(privateToken)
     elif key == "j":
         getUsersInProject(privateToken)
+    elif key == "k":
+        adminCreateUsers(privateToken)
     elif key == "s":
         globalSearch(privateToken)
     elif key == "u":
