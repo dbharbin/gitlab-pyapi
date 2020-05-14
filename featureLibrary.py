@@ -332,7 +332,7 @@ def group_set_nested_visibility(Group_ID, Visibility, MyToken):
             ('include_subgroups', true)
         )
 
-        responseGroups = requests.get('{}/groups/{}/subgroups?include_subgroups=true&per_page=50'.format(BASE_URL,gid), headers=headers)
+        responseGroups = requests.get('{}/groups/{}/subgroups?include_subgroups=true&per_page=100'.format(BASE_URL,gid), headers=headers)
 
         json_data = responseGroups.text
         json_object = json.loads(json_data)
@@ -374,7 +374,7 @@ def group_set_nested_visibility(Group_ID, Visibility, MyToken):
             ('include_subgroups', true)
         )
 
-        responseGroups = requests.get('{}/groups/{}/subgroups?include_subgroups=true&per_page=50'.format(BASE_URL,gid), headers=headers)
+        responseGroups = requests.get('{}/groups/{}/subgroups?include_subgroups=true&per_page=100'.format(BASE_URL,gid), headers=headers)
         json_data = responseGroups.text
         json_object = json.loads(json_data)
 
